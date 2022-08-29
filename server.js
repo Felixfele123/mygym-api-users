@@ -8,6 +8,7 @@ const cookieParser = require("cookie-parser");
 const auth = require('./routes/auth')
 const menu = require('./routes/menu');
 const login = require('./routes/login')
+const signup = require('./routes/signup')
 const logout = require('./routes/logout')
 const bodyParser = require('body-parser')
 
@@ -28,6 +29,7 @@ app.use(bodyParser.urlencoded({ extended: false}));
 //nytt
 app.use('/menu', menu);
 app.use('/login', login)
+app.use('/signup', signup)
 app.use('/secret', auth)
 app.use('/logout', logout)
 

@@ -16,7 +16,7 @@ router.post("/", async (req,res) => {
     {
         try {
             const pwCheck = await bcrypt.compare(req.body.password,user[0].password);
-            console.log(pwCheck)
+            console.log(req.body.password + " " + user[0].password)
             if(pwCheck){
                 let userObject = {
                     uid:user[0]._id,
