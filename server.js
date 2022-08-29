@@ -11,6 +11,8 @@ const login = require('./routes/login')
 const signup = require('./routes/signup')
 const logout = require('./routes/logout')
 const bodyParser = require('body-parser')
+const workout = require('./routes/workout');
+const schema = require('./routes/schema');
 
 var corsOptions = {
     origin: 'http://example.com',
@@ -32,5 +34,7 @@ app.use('/login', login)
 app.use('/signup', signup)
 app.use('/secret', auth)
 app.use('/logout', logout)
+app.use('/workout', workout);
+app.use('/schema', schema);
 
 const server = app.listen(process.env.PORT, () => console.log("port " + process.env.PORT));

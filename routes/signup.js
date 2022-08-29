@@ -30,7 +30,7 @@ router.post("/", async (req,res) => {
                 {
                     console.log("4")
                     try {
-                        const pwCheck = await bcrypt.compare(result.password,req.body.password);
+                        const pwCheck = await bcrypt.compare(req.body.password,result.password);
                         console.log(result.password + " " + req.body.password)
                         if(pwCheck){
                             console.log("5")
